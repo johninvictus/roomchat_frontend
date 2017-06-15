@@ -1,0 +1,18 @@
+.install-header {
+    background-color: #fff;
+    box-shadow: 0 2px 2px #e3e3e3;
+    position: relative;
+}
+
+.span-11-of-12 {
+    text-align: center;
+}
+
+.header-logo {
+    width: 80px;
+}
+
+.install-btn {
+    margin-left: 10px;
+}
+

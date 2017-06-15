@@ -1,0 +1,26 @@
+.login-section {
+    padding-top: 120px;
+    padding-bottom: 50px;
+    background-color: #f4f4f4;
+}
+
+.login-column:first-child {
+    text-align: right;
+}
+
+.login-column:last-child {
+    padding-right: 3%;
+}
+
+.device-holder img {
+    width: 55%;
+}
+
+.login-form-container {
+    margin-top: 30px;
+    width: 50%;
+}
+.register-form-container {
+    margin-top: 30px;
+    width: 50%;
+}
