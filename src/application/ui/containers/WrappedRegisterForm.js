@@ -81,7 +81,8 @@ class RegisterForm extends React.Component {
                             <Checkbox>Agree with terms</Checkbox>
                         )}
 
-                        <Button type="primary" htmlType="submit" className="login-form-button" loading={this.state.loading}>
+                        <Button type="primary" htmlType="submit" className="login-form-button"
+                                loading={this.state.loading}>
                             Sign up
                         </Button>
                         Or <a href="" onClick={this.toLoginForm}>Log in now!</a>
