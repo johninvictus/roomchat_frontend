@@ -4,6 +4,9 @@
 import React from 'react';
 import {Form, Icon, Input, Button, Checkbox} from 'antd';
 import {browserHistory} from 'react-router';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as authActions from '../../actions/authActions';
 
 const FormItem = Form.Item;
 
@@ -21,7 +24,15 @@ class LoginForm extends React.Component {
 
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
+                let data = {
+                    "user" : {
+                        "username" : values.username,
+                        "password" : values.password
+                    },
+                }
+
+                this.props.actions.login(data);
+
             }
         });
     }
@@ -40,7 +51,7 @@ class LoginForm extends React.Component {
                     <h2>Sign in</h2>
 
                     <FormItem>
-                        {getFieldDecorator('userName', {
+                        {getFieldDecorator('username', {
                             rules: [{required: true, message: 'Please input your username!'}],
                         })(
                             <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="Username"/>
@@ -77,5 +88,15 @@ class LoginForm extends React.Component {
     }
 }
 
+function mapStateToProps(state, ownProps) {
+    return {}
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(authActions, dispatch)
+    }
+}
+
 const WrappedLoginForm = Form.create()(LoginForm);
-export default WrappedLoginForm ;
+export default connect(mapStateToProps, mapDispatchToProps)(WrappedLoginForm);

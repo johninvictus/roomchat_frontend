@@ -3,8 +3,8 @@ import * as constant from '../config/constants';
 import Api from '../api';
 
 function setCUrrentUser(dispatch, response) {
-    localStorage.setItem(constant.TOKEN, JSON.stringify(response.meta.token))
-
+    localStorage.setItem(constant.TOKEN, 
+        JSON.stringify(response.meta.token))
     dispatch({
         type: types.AUTHENTICATION_SUCCESS,
         response
@@ -52,7 +52,6 @@ export function logout() {
             unSetUser(dispatch)
         });
 }
-
 
 export function authenticate() {
     return dispatch =>Api.post('/sessions/referesh')

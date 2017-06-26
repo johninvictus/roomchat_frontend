@@ -91,13 +91,15 @@ class RegisterForm extends React.Component {
                 })
 
                 // make internet call to validate email
-                this.props.actions.validateEmailAddress(email).then(()=> this.waitCheckForStates());
+                this.props.actions.validateEmailAddress(email)
+                    .then(()=> this.waitCheckForStates()
+                    );
 
 
                 this.setState({
                     user: {
-                        username: values.username,
-                        email: values.email,
+                        username: values.username.toLowerCase(),
+                        email: values.email.toLowerCase(),
                         password: values.password
                     }
                 })
